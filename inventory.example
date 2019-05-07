@@ -1,6 +1,6 @@
 # Director group should hold one single server
 [director]
-bareos-ubuntu-server
+#bareos-ubuntu-server
 bareos-centos-server
 
 [clients]
