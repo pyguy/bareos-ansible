@@ -17,13 +17,13 @@
 - name: Init new Postgresql db cluster on RHEL/CentOS 7
   command: /usr/bin/postgresql-setup initdb
   when:
-    - bareos_install|changed
+    - bareos_install is changed
     - ansible_os_family == 'RedHat' and ansible_distribution_major_version == '7'
 
 - name: Init new Postgresql db cluster on RHEL/CentOS 6
   command: service postgresql initdb
   when:
-    - bareos_install|changed
+    - bareos_install is changed
     - ansible_os_family == 'RedHat'
     - ansible_distribution_major_version == '6'
 

@@ -22,7 +22,7 @@
     - '/usr/lib/bareos/scripts/create_bareos_database'
     - '/usr/lib/bareos/scripts/make_bareos_tables'
     - '/usr/lib/bareos/scripts/grant_bareos_privileges'
-  when: bareos_install|changed and database == 'mariadb'
+  when: bareos_install is changed and database == 'mariadb'
 
 - block:
     - name: Install psycopg2 package for Postgresql management
@@ -48,7 +48,7 @@
         - '/usr/lib/bareos/scripts/grant_bareos_privileges'
       become: true
       become_user: postgres
-  when: bareos_install|changed and database == 'postgresql'
+  when: bareos_install is changed and database == 'postgresql'
 
 - name: Start and enable Bareos services
   service:
