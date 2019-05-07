@@ -20,12 +20,12 @@ Bareos-basic role triggered by the meta dependency of each role.
 Please, use the inventory.example file as a reference for the required groups.
 
 >Supported platforms:
-- Centos 6
-- Centos 7
+- Centos 6/7
 - Debian 8
-- Ubuntu 14.04
+- Ubuntu 14.04/16.04/18.04
 
 #### TODO:
 - [x] Install and configure Bareos (Director, WebUI, Clients)
+- [ ] Install and configure pluigns (VMware)
 - [ ] SSL support
 - [ ] Jobs creation
