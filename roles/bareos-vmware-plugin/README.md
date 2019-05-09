@@ -18,6 +18,7 @@ In order to backup the VMs you need to define the `vm_backups` variable with the
 * **name**: is the VM's name and is used to define Job and FileSet names as well
 * **folder**: is the vcenter folder where the vm is located
 * **dc**: is the vcenter datacenter where the folder is located
+* **jobdef**: is the job schedule definition, default is "DefaultJob"
 
 Dependencies
 ------------
