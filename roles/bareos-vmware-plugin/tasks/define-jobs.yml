@@ -1,0 +1,10 @@
+---
+
+- name: Add VM backup Jobs
+  template:
+    src: backup-jobs.j2
+    dest: "{{ bareos_job_dir }}/vm-{{ item.vm_name }}.conf"
+    owner: bareos
+    group: bareos
+  with_items: "{{ backup_jobs }}"
+  notify: Restart Bareos-dir service

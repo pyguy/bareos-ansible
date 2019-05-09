@@ -1,0 +1,14 @@
+---
+
+bareos_plugin_dir: /usr/lib/bareos/plugins
+bareos_job_dir: /etc/bareos/bareos-dir.d/director
+
+bareos_module_vcserver: vcenter.example.org
+bareos_module_vcuser: bakadm@vsphere.local
+bareos_module_vcpass: Bak.Adm-1234
+
+backup_jobs:
+  - vm_name: websrv1
+    vm_folder: /
+    vm_dc: mydc1
+    jobdef: DefaultJob

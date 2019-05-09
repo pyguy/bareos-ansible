@@ -1,0 +1,17 @@
+---
+
+- name: Install VMware plugin
+  package:
+    name: bareos-vmware-plugin
+    state: present
+  register: plugin_install
+
+- name: Enable VMware plugin on bareos-fd
+  template:
+    src: bareof-fd-client.conf.j2
+    dest: /etc/bareos/bareos-fd.d/client/myself.conf
+    owner: bareos
+    group: bareos
+  notify: Restart Bareos-fd service
+
+- include_tasks: define-jobs.yml

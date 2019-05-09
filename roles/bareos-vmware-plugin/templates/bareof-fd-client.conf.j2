@@ -1,0 +1,8 @@
+# {{ ansible_managed }}
+
+Client {
+  Name = {{ ansible_hostname }}-fd
+  Maximum Concurrent Jobs = 20
+  Plugin Directory = {{ bareos_plugin_dir }}
+  Plugin Names = python
+}

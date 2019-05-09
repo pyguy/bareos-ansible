@@ -1,0 +1,19 @@
+# {{ ansible_managed }}
+
+Job {
+  Name = "vm-{{ item.vm_name }}"
+  JobDefs = "{{ item.jobdef }}"
+  FileSet = "vm-{{ item.vm_name }}_fileset"
+}
+  
+FileSet {
+  Name = "vm-{{ item.vm_name }}_fileset"
+  
+  Include {
+    Options {
+         signature = MD5
+         Compression = GZIP
+    }
+    Plugin = "python:module_path={{ bareos_plugin_dir }}:module_name=bareos-fd-vmware:dc={{ item.vm_dc }}:folder={{ item.vm_folder }}:vmname={{ item.vm_name }}:vcserver={{ bareos_module_vcserver }}:vcuser={{ bareos_module_vcuser }}:vcpass={{ bareos_module_vcpass }}"
+  }
+}

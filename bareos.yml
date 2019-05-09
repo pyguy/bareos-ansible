@@ -6,8 +6,9 @@
 - name: Bareos director
   hosts: director
   roles:
-    - role: bareos-director
-    - role: bareos-webui
+    - { role: bareos-director, tags: "director_instances" }
+    - { role: bareos-webui, tags: "webui_instances" }
+    - { role: bareos-vmware-plugin, tags: ["vmware_plugin_instances", "vmware_plugin_config"] }
 
 - name: Bareos clients
   hosts: clients
